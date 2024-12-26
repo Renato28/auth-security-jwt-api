@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
+@Table(name = "users")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -27,6 +28,7 @@ public class UserModel implements UserDetails {
     private UUID id;
     private String email;
     private String password;
+    @Enumerated(EnumType.STRING)
     private UserRole userRole;
 
     @Temporal(TemporalType.TIMESTAMP)
